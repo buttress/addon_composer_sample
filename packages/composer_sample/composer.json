@@ -1,0 +1,13 @@
+{
+  "name": "buttress/composer_sample",
+  "description": "Sample addon for concrete5 with composer assets",
+  "authors": [
+    {
+      "name": "Korvin Szanto",
+      "email": "korvinszanto@gmail.com"
+    }
+  ],
+  "require": {
+    "twig/twig": "1.16.2"
+  }
+}
