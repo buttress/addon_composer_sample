@@ -3,6 +3,8 @@ namespace Concrete\Package\ComposerSample;
 
 use Composer\Package\Loader\InvalidPackageException;
 use Concrete\Core\Foundation\Service\ProviderList;
+use Illuminate\Filesystem\FileNotFoundException;
+use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\ClassLoader\Psr4ClassLoader;
 
 class Controller extends \Package
@@ -62,7 +64,8 @@ class Controller extends \Package
         $loader->register();
 
         // Initialize composer
-        require_once __DIR__ . '/vendor/autoload.php';
+        $filesystem = new Filesystem();
+        $filesystem->getRequire(__DIR__ . '/vendor/autoload.php');
     }
 
 }
